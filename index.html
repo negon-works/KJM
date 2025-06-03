@@ -15,17 +15,25 @@
 <body>
 	
 	<header>
-		<h3><a href="#">KJ<span class="gold">M</span></a></h3>
-		<nav>
-		<a href="#">HOME</a>
-		<a href="#about">ABOUT</a>
-		<a href="#skills">SKILLS</a>
-		<a href="#portfolio">PORTFOLIO</a>
-		<a href="#contact">CONTACT</a>
-		<div class="cursor"></div>
-		</nav>
-		
+	  <h3><a href="#">KJ<span class="gold">M</span></a></h3>
+	  
+	  <div class="hamburger" id="hamburger">
+	    <span></span>
+	    <span></span>
+	    <span></span>
+	  </div>
+
+	  <nav class="nav-links" id="nav">
+	    <a href="#">HOME</a>
+	    <a href="#about">ABOUT</a>
+	    <a href="#skills">SKILLS</a>
+	    <a href="#portfolio">PORTFOLIO</a>
+	    <a href="#contact">CONTACT</a>
+	    <div class="cursor"></div>
+	  </nav>
 	</header>
+
+
 	
 	<section class="hero">
 	  <div class="container" data-aos="fade-right">
@@ -165,6 +173,16 @@
 	cursor.style.top = e.clientY	+ 'px';					  
 							  
 							  }) 
+	</script>
+	<script >
+		const hamburger = document.querySelector('.hamburger');
+		const navLinks = document.querySelector('nav.nav-links');
+
+		hamburger.addEventListener('click', () => {
+		  hamburger.classList.toggle('open');
+		  navLinks.classList.toggle('open');
+		});
+
 	</script>
 	
 </body>

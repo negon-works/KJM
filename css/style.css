@@ -73,27 +73,71 @@ h2 {
 
 /* ========== HEADER ========== */
 header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 5%;
-	position: sticky;
-	top: 0;
-	background-color: #000000;
-	/*box-shadow: 0 2px 10px rgba(255, 180, 0, 0.2);*/
-	z-index: 99999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  background-color: #000000;
+  z-index: 99999;
+}
+
+nav.nav-links {
+  display: flex;
+  gap: 10px;
+  transition: none; /* Avoid unintended transition */
 }
 
 nav a {
-	color: #FFFFFF;
-	padding: 15px;
+  color: #FFFFFF;
+  padding: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-	cursor: pointer;
-	background-color: #ffb400;
-	color: black;
+  cursor: pointer;
+  background-color: #ffb400;
+  color: black;
 }
+
+.gold {
+  color: #ffb400;
+  font-weight: 700;
+}
+
+/* Hamburger button - hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 7px);
+  transform-origin: center;
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -7px);
+  transform-origin: center;
+}
+
+
 
 /* ========== HERO SECTION ========== */
 .hero {

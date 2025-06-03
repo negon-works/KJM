@@ -1,4 +1,4 @@
-/* Tablet & Small Desktop */
+/* ========== TABLET & SMALL DESKTOP (max-width: 1024px) ========== */
 @media screen and (max-width: 1024px) {
   .hero .full {
     justify-content: center;
@@ -15,15 +15,49 @@
   }
 }
 
-/* Mobile */
-@media screen and (max-width: 600px) {
+/* ========== MOBILE (max-width: 768px) ========== */
+@media screen and (max-width: 768px) {
+  /* Hamburger Menu */
+  nav.nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    flex-direction: column;
+    width: 200px;
+    height: calc(100vh - 60px);
+    padding-top: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  nav.nav-links.open {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  nav.nav-links a {
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+
+  /* Hero Section */
   .hero .full {
     flex-direction: column;
     gap: 30px;
     text-align: left;
   }
 
-  .hero .first, .hero .second {
+  .hero .first,
+  .hero .second {
     width: 100%;
   }
 
@@ -52,9 +86,13 @@
     width: 100%;
     max-width: 280px;
   }
+
+  .footer {
+    font-size: 10px;
+  }
 }
 
-/* Extra Small Devices */
+/* ========== EXTRA SMALL DEVICES (max-width: 500px) ========== */
 @media screen and (max-width: 500px) {
   .hero h1 {
     font-size: 20px;
@@ -84,7 +122,4 @@
     font-size: 12px;
     padding: 8px 16px;
   }
-
-  .footer{
-    font-size: 10px;
 }
