@@ -129,36 +129,40 @@
 	</section>
 		
 		<section class="getintouch" id="contact">
-		<div class="title" data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom">
-			<h2>GET <span class="gold">IN TOUCH</span></h2>
-			<p>Want to work together or just chat about movies? Let's connect!</p></div>
+			<div class="title" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+				<h2>GET <span class="gold">IN TOUCH</span></h2>
+				<p>Want to work together or just chat about movies? Let's connect!</p>
+			</div>
 			<div class="row">
-			<div class="col" data-aos="fade-right">
-				<p><b>My Contacts Details</b></p>
-				<p><b>Address</b></p>
-				<p>198 West 21th Street, Suite 721
+				<div class="col" data-aos="fade-right">
+					<p><b>My Contacts Details</b></p>
+					<p><b>Address</b></p>
+					<p>198 West 21th Street, Suite 721
 
-					New York, NY 10010</p>
-				<p>Email: Dynamiclayers-Net</p>
-				<p>Phone: +88 (0) 101 OOO</p>
-				
+						New York, NY 10010</p>
+					<p>Email: Dynamiclayers-Net</p>
+					<p>Phone: +88 (0) 101 OOO</p>
+					
 				</div>
-				<form action="">
-			<div class="col" data-aos="fade-left">
+				<form id="contact-form" action="https://formsubmit.co/youremail@gmail.com" method="POST">
 				
-		<input type="text" placeholder="Enter your name"> 
-		<input type="email" placeholder="Enter your email">
-			<textarea rows	="10" placeholder="Enter your message"></textarea>
-			<input class="submit" type="submit" value="Sent Message"></div>
-			</form>
+				<input type="hidden" name="_captcha" value="false">
+				<input type="hidden" name="_next" value="">
+
+				<input type="text" name="name" placeholder="Enter your name" required>
+				<input type="email" name="email" placeholder="Enter your email" required>
+				<textarea name="message" placeholder="Enter your message" rows="10" required></textarea>
+				<input class="submit" type="submit" value="Send Message">
+				</form>
+
+
 			</div>
 			
 		</section>
 			
-			<footer class="footer">
-  <p>© 2025 <span class="gold">KJM</span>. All Rights Reserved.</p>
-</footer>
+		<footer class="footer">
+			<p>© 2025 <span class="gold">KJM</span>. All Rights Reserved.</p>
+		</footer>
 
 	
 <script src="aos/aos.js"></script>
@@ -184,6 +188,36 @@
 		});
 
 	</script>
-	
+	<script>
+		const form = document.getElementById("contact-form");
+
+		form.addEventListener("submit", function (e) {
+			e.preventDefault();
+
+			fetch(form.action, {
+			method: "POST",
+			body: new FormData(form),
+			})
+			.then(() => {
+			Swal.fire({
+				title: 'Sent!',
+				text: 'Your message has been delivered 📨',
+				icon: 'success',
+				confirmButtonColor: '#ffb400',
+			});
+			form.reset();
+			})
+			.catch(() => {
+			Swal.fire({
+				title: 'Oops!',
+				text: 'Something went wrong. Please try again.',
+				icon: 'error',
+				confirmButtonColor: '#ffb400',
+			});
+			});
+		});
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
