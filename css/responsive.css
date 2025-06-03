@@ -1,23 +1,32 @@
+/* Tablet & Small Desktop */
 @media screen and (max-width: 1024px) {
   .hero .full {
     justify-content: center;
-    text-align: left;
+    gap: 80px;
   }
 
-  .hero .second {
-    text-align: center;
-  }
-
-  .hero .second .hero-img img {
+  .hero .second img {
     width: 350px;
   }
-  .hero .btn{
-  	position: relative;
-  	bottom: 0;
+
+  .hero .btn {
+    justify-content: center;
+    bottom: 0;
   }
 }
 
+/* Mobile */
 @media screen and (max-width: 600px) {
+  .hero .full {
+    flex-direction: column;
+    gap: 30px;
+    text-align: left;
+  }
+
+  .hero .first, .hero .second {
+    width: 100%;
+  }
+
   .hero h1 {
     font-size: 36px;
   }
@@ -30,15 +39,13 @@
     font-size: 15px;
   }
 
-  .hero .second .hero-img img {
+  .hero .second img {
     width: 240px;
   }
 
   .hero .btn {
     flex-direction: column;
     align-items: center;
-    position: relative;
-    bottom: 0;
   }
 
   .btn1 {
@@ -46,8 +53,10 @@
     max-width: 280px;
   }
 }
-@media screen and (max-width: 500px){
-	.hero h1 {
+
+/* Extra Small Devices */
+@media screen and (max-width: 500px) {
+  .hero h1 {
     font-size: 20px;
   }
 
@@ -58,26 +67,21 @@
   .hero p {
     font-size: 10px;
   }
-  .hero .first{
-    flex-shrink: none;
-  }
-  .hero .second{
-    width: 235px;
-  }
-  .hero .second .hero-img img {
+
+  .hero .second img {
     width: 100%;
   }
 
   .hero .btn {
-    align-items: center;
-    width: 100%;
-    font-size: 10px;
-    flex-wrap: nowrap;
     flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .btn1 {
-    width: 100%;
     max-width: 150px;
+    font-size: 12px;
+    padding: 8px 16px;
   }
 }
